@@ -121,6 +121,7 @@
   var demo = $('[data-smile="demo"]');
   var demoRange = $("[data-demo-range]");
   var readout = $("[data-demo-readout]");
+  var demoNext = $("[data-demo-next]");
   if (demo && demoRange) {
     demo.innerHTML = smileSVG({ skin: "#E3B08F", lip: "#B5646A" });
     var started = false, completed = false;
@@ -139,6 +140,7 @@
 
       if (!started && t > 0) { started = true; track("demo_start"); }
       if (!completed && t >= 0.97) { completed = true; track("demo_complete"); }
+      demoNext.hidden = t < 0.97;
     };
     demoRange.addEventListener("input", renderDemo);
     renderDemo();
@@ -287,6 +289,8 @@
       if (count !== null) showCount(count + 1);
       form.hidden = true;
       done.hidden = false;
+      $("[data-last-call]").hidden = true;
+      $$('[href="#sorteo"]').forEach(function (a) { if (a.closest(".prize")) a.textContent = "Ya estás participando ✓"; });
       done.focus();
     }).catch(function () {
       submitBtn.disabled = false;
@@ -306,9 +310,10 @@
   /* ---------- CTA fija en mobile ---------- */
   var sticky = $("[data-sticky]");
   if (sticky && "IntersectionObserver" in window) {
-    var heroVisible = true, sorteoVisible = false, footerVisible = false;
-    var update = function () { sticky.classList.toggle("is-off", heroVisible || sorteoVisible || footerVisible || !done.hidden); };
-    new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; update(); }).observe($(".hero"));
+    // Aparece apenas se pierde de vista la tarjeta del premio del hero
+    var prizeVisible = true, sorteoVisible = false, footerVisible = false;
+    var update = function () { sticky.classList.toggle("is-off", prizeVisible || sorteoVisible || footerVisible || !done.hidden); };
+    new IntersectionObserver(function (en) { prizeVisible = en[0].isIntersecting; update(); }).observe($("[data-prize]"));
     new IntersectionObserver(function (en) { sorteoVisible = en[0].isIntersecting; update(); }, { threshold: 0.1 }).observe($("#sorteo"));
     new IntersectionObserver(function (en) { footerVisible = en[0].isIntersecting; update(); }).observe($(".footer"));
   }

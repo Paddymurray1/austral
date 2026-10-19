@@ -19,25 +19,48 @@
 </head>
 <body>
 
-  <div class="disclaimer" role="note">
-    Concepto académico de campaña — no es un sitio oficial de Colgate-Palmolive
-  </div>
+  <!-- Íconos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <clipPath id="tee-clip"><path d="M38 14 22 20 6 40l14 12 10-8v64h60V44l10 8 14-12-16-20-16-6c-4 10-12 14-22 14S42 24 38 14Z"/></clipPath>
+    </defs>
+    <symbol id="i-camiseta" viewBox="0 0 120 120">
+      <g clip-path="url(#tee-clip)">
+        <rect width="120" height="120" fill="#fff"/>
+        <rect x="33" width="13" height="120" fill="#75AADB"/>
+        <rect x="54" width="13" height="120" fill="#75AADB"/>
+        <rect x="75" width="13" height="120" fill="#75AADB"/>
+      </g>
+      <path d="M38 14 22 20 6 40l14 12 10-8v64h60V44l10 8 14-12-16-20-16-6c-4 10-12 14-22 14S42 24 38 14Z" fill="none" stroke="#1A1420" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M40 84c5-9 9 3 14-3s7-9 11 0 9 6 15-5" fill="none" stroke="#1A1420" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <div class="disclaimer" role="note">Concepto académico · no es un sitio oficial de Colgate</div>
 
   <!-- ① HERO -->
   <header class="hero" id="inicio">
     <div class="wrap hero__grid">
       <div class="hero__copy">
         <p class="brandline">Colgate <span>Luminous White</span> Color Correct</p>
-        <h1 class="hero__title">No te prometemos nada.<br><em>Te lo mostramos.</em></h1>
+        <h1 class="hero__title">No te prometemos nada. <em>Te lo mostramos.</em></h1>
 
         <p class="hero__lead" data-hero-lead>Del amarillo al blanco en un cepillado.</p>
-        <p class="hero__claim"><strong>Efecto blanqueador al instante.*</strong></p>
+        <p class="hero__claim">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="currentColor"/></svg>
+          Efecto blanqueador al instante*
+        </p>
         <p class="fineprint">*Efecto temporal, se renueva en cada cepillado.</p>
 
-        <div class="hero__ctas">
-          <a class="btn btn--light" href="#como-funciona" data-track="cta_click" data-cta="hero_como_funciona">Entendé por qué funciona ↓</a>
-          <a class="link-light" href="#sorteo" data-track="cta_click" data-cta="hero_sorteo">Sorteo: camiseta firmada por Julián Álvarez</a>
+        <div class="prize" data-prize>
+          <svg class="prize__tee" aria-hidden="true"><use href="#i-camiseta"/></svg>
+          <div class="prize__txt">
+            <p class="prize__kicker">Sorteo</p>
+            <p class="prize__title">Ganá una camiseta firmada por Julián Álvarez</p>
+          </div>
+          <a class="btn btn--red btn--block prize__btn" href="#sorteo" data-track="cta_click" data-cta="hero_sorteo">Anotate en 30 segundos <span aria-hidden="true">→</span></a>
         </div>
+        <a class="link-light hero__secondary" href="#como-funciona" data-track="cta_click" data-cta="hero_como_funciona">O entendé primero por qué funciona ↓</a>
       </div>
 
       <div class="hero__visual">
@@ -45,7 +68,7 @@
              alt="Colgate Luminous White Color Correct, caja y tubo de 70 g">
         <aside class="qr-desk" aria-label="Abrir en el celular">
           <img src="assets/qr-pitch.svg" width="132" height="132" alt="Código QR a esta página">
-          <p><strong>Abrilo en tu celu.</strong><br>Escaneá y probá la demo.</p>
+          <p><strong>Abrilo en tu celu.</strong><br>Probá la demo y anotate al sorteo.</p>
         </aside>
       </div>
     </div>
@@ -86,6 +109,7 @@
               <span class="slider__ends"><span>Amarillo</span><span>Corregido</span></span>
             </label>
             <p class="demo__readout" data-demo-readout aria-live="polite">Arrastrá para cepillar →</p>
+            <a class="demo__next" href="#sorteo" data-demo-next data-track="cta_click" data-cta="demo_sorteo" hidden>Ya lo viste. Ahora anotate al sorteo →</a>
           </div>
         </div>
       </div>
@@ -145,59 +169,12 @@
       </div>
     </section>
 
-    <!-- ⑤ MOMENTOS -->
-    <section class="section" id="momentos" aria-labelledby="t-momentos">
-      <div class="wrap">
-        <p class="kicker">Para cuándo</p>
-        <h2 id="t-momentos" class="h2">Los momentos en los que te miran la boca.</h2>
-      </div>
-      <ol class="moments" data-moments>
-        <li class="moment"><span class="moment__n">01</span><h3>Primera cita.</h3><p>Te va a mirar los dientes. No te lo va a decir.</p></li>
-        <li class="moment"><span class="moment__n">02</span><h3>Entrevista.</h3><p>Preparaste “tu mayor defecto”. Que no sea el amarillo.</p></li>
-        <li class="moment"><span class="moment__n">03</span><h3>La foto del grupo.</h3><p>La van a subir. Te van a etiquetar. Va a quedar.</p></li>
-        <li class="moment"><span class="moment__n">04</span><h3>El boliche.</h3><p>Luz negra. Dientes que brillan. O no.</p></li>
-        <li class="moment"><span class="moment__n">05</span><h3>Videollamada.</h3><p>La cámara de la notebook no perdona.</p></li>
-      </ol>
-      <div class="wrap">
-        <p class="punch">Es pasta. Te cepillás. <span>Listo.</span></p>
-      </div>
-    </section>
-
-    <!-- ⑥ PREGUNTAS -->
-    <section class="section section--lavanda" id="preguntas" aria-labelledby="t-faq">
-      <div class="wrap wrap--narrow">
-        <p class="kicker">Sin vueltas</p>
-        <h2 id="t-faq" class="h2">Preguntas que te hacés pero no preguntás.</h2>
-        <div class="faq">
-          <details data-faq="permanente">
-            <summary>¿Es permanente?</summary>
-            <p>No, y no te vamos a decir que sí. La tecnología violeta corrige el tono amarillo al instante y el efecto es temporal: se renueva cada vez que te cepillás. Por eso la usás como tu pasta de todos los días.</p>
-          </details>
-          <details data-faq="esmalte">
-            <summary>¿Me daña el esmalte?</summary>
-            <p>No. Tiene flúor, protege el esmalte y está recomendada por odontólogos. No es un tratamiento abrasivo: corrige el color, no raspa el diente.</p>
-          </details>
-          <details data-faq="uso">
-            <summary>¿La tengo que usar distinto?</summary>
-            <p>No. Cepillo, pasta, dos minutos. Lo de siempre. No suma pasos ni tiempo a tu rutina.</p>
-          </details>
-          <details data-faq="violeta">
-            <summary>¿Por qué es violeta?</summary>
-            <p>Porque el violeta está enfrente del amarillo en el círculo cromático. Cuando se superponen, se neutralizan y el diente se ve más blanco. Es el mismo truco del shampoo violeta para el pelo rubio.</p>
-          </details>
-          <details data-faq="donde">
-            <summary>¿Dónde la consigo?</summary>
-            <p>En farmacias, supermercados y online en <a href="#" data-farmaonline data-track="cta_click" data-cta="faq_farmaonline" target="_blank" rel="noopener">Farmaonline</a>. También hay tamaño viaje de 20 g, para la mochila.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ⑦ SORTEO -->
+    <!-- ⑤ SORTEO (subido: es el motivo del escaneo) -->
     <section class="section section--red" id="sorteo" aria-labelledby="t-sorteo">
       <div class="wrap sorteo">
         <div class="sorteo__copy">
           <p class="kicker kicker--light">Sorteo</p>
+          <svg class="sorteo__tee" aria-hidden="true"><use href="#i-camiseta"/></svg>
           <h2 id="t-sorteo" class="h2">Anotate y ganá una camiseta firmada por Julián Álvarez.</h2>
           <p class="lead">Treinta segundos. Cuatro datos. Nada más.</p>
           <p class="counter" data-counter hidden><strong data-counter-n>0</strong> ya se anotaron</p>
@@ -235,7 +212,7 @@
             <span>Soy mayor de 18 y acepto las <a href="#bases">bases y condiciones</a> y el uso de mis datos para este sorteo.</span>
           </label>
           <p class="form__error" data-form-error role="alert" hidden></p>
-          <button class="btn btn--dark btn--block" type="submit" data-submit>Quiero participar</button>
+          <button class="btn btn--red btn--block" type="submit" data-submit>Quiero participar</button>
           <p class="fineprint fineprint--light">Prototipo de campaña: el sorteo es demostrativo. Tus datos solo se usan para medir esta demo.</p>
         </form>
 
@@ -247,11 +224,67 @@
       </div>
     </section>
 
+    <!-- ⑥ MOMENTOS -->
+    <section class="section" id="momentos" aria-labelledby="t-momentos">
+      <div class="wrap">
+        <p class="kicker">Para cuándo</p>
+        <h2 id="t-momentos" class="h2">Los momentos en los que te miran la boca.</h2>
+      </div>
+      <ol class="moments" data-moments>
+        <li class="moment"><span class="moment__n">01</span><h3>Primera cita.</h3><p>Te va a mirar los dientes. No te lo va a decir.</p></li>
+        <li class="moment"><span class="moment__n">02</span><h3>Entrevista.</h3><p>Preparaste “tu mayor defecto”. Que no sea el amarillo.</p></li>
+        <li class="moment"><span class="moment__n">03</span><h3>La foto del grupo.</h3><p>La van a subir. Te van a etiquetar. Va a quedar.</p></li>
+        <li class="moment"><span class="moment__n">04</span><h3>El boliche.</h3><p>Luz negra. Dientes que brillan. O no.</p></li>
+        <li class="moment"><span class="moment__n">05</span><h3>Videollamada.</h3><p>La cámara de la notebook no perdona.</p></li>
+      </ol>
+      <div class="wrap">
+        <p class="punch">Es pasta. Te cepillás. <span>Listo.</span></p>
+      </div>
+    </section>
+
+    <!-- ⑦ PREGUNTAS -->
+    <section class="section section--lavanda" id="preguntas" aria-labelledby="t-faq">
+      <div class="wrap wrap--narrow">
+        <p class="kicker">Sin vueltas</p>
+        <h2 id="t-faq" class="h2">Preguntas que te hacés pero no preguntás.</h2>
+        <div class="faq">
+          <details data-faq="permanente">
+            <summary>¿Es permanente?</summary>
+            <p>No, y no te vamos a decir que sí. La tecnología violeta corrige el tono amarillo al instante y el efecto es temporal: se renueva cada vez que te cepillás. Por eso la usás como tu pasta de todos los días.</p>
+          </details>
+          <details data-faq="esmalte">
+            <summary>¿Me daña el esmalte?</summary>
+            <p>No. Tiene flúor, protege el esmalte y está recomendada por odontólogos. No es un tratamiento abrasivo: corrige el color, no raspa el diente.</p>
+          </details>
+          <details data-faq="uso">
+            <summary>¿La tengo que usar distinto?</summary>
+            <p>No. Cepillo, pasta, dos minutos. Lo de siempre. No suma pasos ni tiempo a tu rutina.</p>
+          </details>
+          <details data-faq="violeta">
+            <summary>¿Por qué es violeta?</summary>
+            <p>Porque el violeta está enfrente del amarillo en el círculo cromático. Cuando se superponen, se neutralizan y el diente se ve más blanco. Es el mismo truco del shampoo violeta para el pelo rubio.</p>
+          </details>
+          <details data-faq="donde">
+            <summary>¿Dónde la consigo?</summary>
+            <p>En farmacias, supermercados y online en <a href="#" data-farmaonline data-track="cta_click" data-cta="faq_farmaonline" target="_blank" rel="noopener">Farmaonline</a>. También hay tamaño viaje de 20 g, para la mochila.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recordatorio final -->
+    <section class="last-call" data-last-call aria-label="Recordatorio del sorteo">
+      <div class="wrap last-call__in">
+        <svg class="last-call__tee" aria-hidden="true"><use href="#i-camiseta"/></svg>
+        <p>La camiseta de Julián Álvarez sigue en juego.</p>
+        <a class="btn btn--light" href="#sorteo" data-track="cta_click" data-cta="final_sorteo">Anotarme</a>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
     <div class="wrap">
-      <img class="footer__pack" src="assets/producto.webp" width="900" height="864" alt="" loading="lazy">
       <p><strong>Colgate Luminous White Color Correct.</strong> En farmacias, supermercados y <a href="#" data-farmaonline target="_blank" rel="noopener">Farmaonline</a>.</p>
       <details class="bases" id="bases">
         <summary>Bases y condiciones (demo)</summary>
@@ -262,7 +295,7 @@
   </footer>
 
   <a class="sticky-cta is-off" href="#sorteo" data-sticky data-track="cta_click" data-cta="sticky_sorteo">
-    <span>Participá por la camiseta firmada</span><span aria-hidden="true">→</span>
+    <span>Anotate y ganá la camiseta firmada</span><span aria-hidden="true">→</span>
   </a>
 
   <script src="app.js" defer></script>
